@@ -1,4 +1,26 @@
-const loginBtn = document.getElementById("loginBtn");
+// const inputs = document.querySelectorAll(".input");
+
+// function focusFunction(){
+//     let parentNode = this.parentNode.parentNode;
+//     parentNode.classList.add('focus');
+// }
+// function blurFunction(){
+//     let parentNode = this.parentNode.parentNode;
+//     if(this.value == ''){
+//         parentNode.classList.remove('focus');
+//     }
+// }
+
+// inputs.forEach(input=>{
+//     input.addEventListener('focus',focusFunction);
+//     input.addEventListener('blur',blurFunction);
+// });
+
+
+console.log("madi");
+
+
+const registerBtn = document.getElementById("btn");
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
 import {
@@ -29,39 +51,45 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-loginBtn.addEventListener("click", function (event) {
+registerBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  const email = document.getElementById("email2").value;
-  const password = document.getElementById("password2").value;
+  console.log("here");
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const full_name = document.getElementById("full_name").value;
+  const user_name = document.getElementById("username").value;
 
   if (validate_email(email) == false || validate_password(password) == false) {
     alert("Email or Password is not correct!!");
     return;
   }
+  if (
+    validate_field(full_name) == false ||
+    validate_field(user_name) == false
+  ) {
+    alert("One or More Extra Fields is not correct!!");
+    return;
+  }
 
-  signInWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-
       const user_data = {
+        email: email,
+        full_name: full_name,
+        user_name: user_name,
         last_login: Date.now(),
       };
 
       const dbRef = ref(database, "users/" + user.uid);
-      update(dbRef, user_data)
-        .then(() => {
-          alert("User Logged In!!");
-        })
-        .catch((error) => {
-          console.error("Error updating user data:", error);
-          alert("Error updating user data.");
-        });
-    })
-    .catch(function (error) {
-      var error_code = error.code;
-      var error_message = error.message;
+      set(dbRef, user_data);
 
-      alert(error_message);
+      alert("User Created!!");
+    })
+    .catch((error) => {
+      const errorMessage = error;
+      alert(errorMessage);
     });
 });
 
