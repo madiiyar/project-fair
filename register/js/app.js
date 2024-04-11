@@ -1,4 +1,25 @@
 console.log("madi");
+const btnOk = document.getElementById("btn-modal")
+const btnEx = document.getElementById("btn-ok")
+let popup = document.getElementById("popup");
+let exist = document.getElementById("exist")
+
+function existIt() {
+  exist.classList.add("open-exist");
+}
+
+btnEx.onclick = function(){
+  exist.classList.remove("open-exist");
+}
+
+function openPopup() {
+  popup.classList.add("open-popup");
+}
+
+
+btnOk.onclick = function(){
+  popup.classList.remove("open-popup");
+}
 
 
 const registerBtn = document.getElementById("btn");
@@ -42,15 +63,13 @@ registerBtn.addEventListener("click", function (event) {
   const user_name = document.getElementById("username").value;
 
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert("Email or Password is not correct!!");
-    return;
+    return openPopup();
   }
   if (
     validate_field(full_name) == false ||
     validate_field(user_name) == false
   ) {
-    alert("One or More Extra Fields is not correct!!");
-    return;
+    return openPopup();
   }
 
   createUserWithEmailAndPassword(auth, email, password)
@@ -66,11 +85,10 @@ registerBtn.addEventListener("click", function (event) {
       const dbRef = ref(database, "users/" + user.uid);
       set(dbRef, user_data);
 
-      alert("User Created!!");
+      window.location = '/index.htm'
     })
     .catch((error) => {
-      const errorMessage = error;
-      alert(errorMessage);
+      return existIt()
     });
 });
 

@@ -3,37 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Register</title>
     <script src="/register/js/app.js" type="module" defer></script>
 </head>
 <body>
-    <img src="img/bg.png" alt="" class="wave">
+    <div class="popup" id="popup">
+        <div class="popupi">Error</div>
+        <br><br>
+        <p>One or More Extra Fields is not correct!!</p>
+        <p>Write all Fields</p>
+        <button type="button" id="btn-modal">OK</button>
+      </div>
+
+      <div class="exist" id="exist">
+        <div class="existi">Error</div>
+        <br><br>
+        <p>This email already existed</p>
+        <p>Register another email</p>
+        <button type="button" id="btn-ok">OK</button>
+      </div>
+
     <div class="container">
-        <div class="img">
-            <img src="img/img-3.svg" alt="">
-        </div>
         <div class="login-box">
             <form action="">
                 <img src="img/avatar.svg" alt="" class="avatar">
-                <h2>register now</h2>
-                <div class="input-group">
+                <h2>Register Now</h2>
+                <div class="inputs">
                     <div class="icon">
-                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-user"></i>
                     </div>
                     <div>
                         <input placeholder="Full Name" id="full_name" type="text" class="input">
                     </div>
                 </div>
-                <div class="input-group">
+                <div class="inputs">
                     <div class="icon">
-                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-user"></i>
                     </div>
                     <div>
                         <input placeholder="Username" id="username" type="text" class="input">
                     </div>
                 </div>
-                <div class="input-group">
+                <div class="inputs">
                     <div class="icon">
                         <i class="fa fa-user"></i>
                     </div>
@@ -41,13 +55,17 @@
                         <input placeholder="Email" id="email" type="text" class="input">
                     </div>
                 </div>
-                <div class="input-group">
+                <div class="inputs">
                     <div class="icon">
                         <i class="fa fa-lock"></i>
                     </div>
                     <div>
                         <input placeholder="Password" id="password" type="password" class="input">
                     </div>
+                </div>
+                <div class="dont">
+                    <p>Already have an account?</p>
+                    <a href="/login-page/login.html" style="color: #38d29f;">LogIn</a>
                 </div>
                 <input type="submit" id="btn" class="btn" value="Register">
             </form>

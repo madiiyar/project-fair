@@ -1,4 +1,15 @@
-console.log("madi");
+const btnOk = document.getElementById("btn-modal")
+let popup = document.getElementById("popup");
+
+function openPopup() {
+  popup.classList.add("open-popup");
+}
+
+
+btnOk.onclick = function(){
+  popup.classList.remove("open-popup");
+}
+
 
 const loginBtn = document.getElementById("btn");
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
@@ -37,8 +48,7 @@ loginBtn.addEventListener("click", function (event) {
   const password = document.getElementById("password").value;
 
   if (validate_email(email) == false || validate_password(password) == false) {
-    alert("Email or Password is not correct!!");
-    return;
+    return openPopup();
   }
 
   signInWithEmailAndPassword(auth, email, password)
@@ -52,7 +62,7 @@ loginBtn.addEventListener("click", function (event) {
       const dbRef = ref(database, "users/" + user.uid);
       update(dbRef, user_data)
         .then(() => {
-          alert("User Logged In!!");
+          window.location = '/index.htm'
         })
         .catch((error) => {
           console.error("Error updating user data:", error);
@@ -95,3 +105,4 @@ function validate_field(field) {
     return true;
   }
 }
+

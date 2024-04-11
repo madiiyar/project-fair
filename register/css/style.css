@@ -1,54 +1,52 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
-.wave{
-    position: fixed;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-}
-.container{
+
+.container {
+    background-image:  url("https://img.freepik.com/free-photo/top-view-medical-desk-composition-with-copy-space_23-2148502942.jpg?t=st=1712769475~exp=1712773075~hmac=677cfc5933b1ea2bc7767d3a6b518b6b97dce5757f453ebd6e1804d638d85c8d&w=1060") ;
     width: 100vw;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 18rem;
-    padding: 0 2rem;
-}
-.img{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.img img{
-    width: 500px;
+    place-items: center;
+    /* padding: 0 2rem; */
+    opacity: inherit;
 }
 
-.login-box{
+.login-box {
+    border-radius: 20px;
+    padding: 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    border: 1px solid white;
+    background-color: white;
+    opacity: 100%;
 }
-form{
+
+form {
     width: 360px;
 }
-.avatar{
+
+.avatar {
     width: 100px;
 }
-form h2{
+
+form h2 {
     font-size: 2.9rem;
     text-transform: uppercase;
     margin: 15px 0;
-    color: #999;
-}
+    color: #38d39f; }
 
-.input-group{
+.inputs {
     position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
@@ -57,10 +55,12 @@ form h2{
     border-bottom: 2px solid #d9d9d9;
 }
 
-.input-group:nth-child(1){
+.inputs:nth-child(1) {
     margin-bottom: 4px;
 }
-.input-group:before,.input-group:after{
+
+.inputs:before,
+.inputs:after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -69,28 +69,32 @@ form h2{
     background-color: #38d39f;
     transition: .5s;
 }
-.input-group:after{
+
+.inputs:after {
     right: 50%;
 }
-.input-group:before{
+
+.inputs:before {
     left: 50%;
 }
-.icon{
+
+.icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.icon i{
+
+.icon i {
     color: #d9d9d9;
     transition: .5s;
 }
 
-.input-group > div{
+.inputs  div {
     position: relative;
     height: 45px;
 }
 
-.input-group >div > h5{
+.inputs  div  h5 {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -99,17 +103,22 @@ form h2{
     font-size: 18px;
     transition: .3s;
 }
-.input-group.focus .icon i{
+
+.inputs.focus .icon i {
     color: #38d39f;
 }
-.input-group.focus div h5{
+
+.inputs.focus div h5 {
     top: -5px;
     font-size: 15px;
 }
-.input-group.focus:after,.input-group.focus:before{
+
+.inputs.focus:after,
+.inputs.focus:before {
     width: 50%;
 }
-.input{
+
+.input {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -123,7 +132,8 @@ form h2{
     color: #555;
     font-family: 'Roboto', sans-serif;
 }
-a{
+
+a {
     display: block;
     text-align: right;
     text-decoration: none;
@@ -131,10 +141,26 @@ a{
     font-size: 0.9rem;
     transition: .3s;
 }
-a:hover{
+
+.dont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dont p {
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    transition: .3s;
+}
+
+a:hover {
     color: #38d39f;
 }
-.btn{
+
+.btn {
     display: block;
     width: 100%;
     height: 50px;
@@ -143,7 +169,8 @@ a:hover{
     font-size: 1.2rem;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right,#32be8f,#38d39f,#32be8f);
+    /* background-color:#38d39f;   */
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
     cursor: pointer;
     color: #fff;
     text-transform: uppercase;
@@ -151,49 +178,192 @@ a:hover{
     background-size: 200%;
     transition: .5s;
 }
-.btn:hover{
+
+.btn:hover {
     background-position: right;
 }
-.copyright{
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    bottom: 2px;
-    color: #38d39f;
-    text-align: center;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-}
 
-/*媒体查询*/
 @media screen and (max-width: 1080px) {
-    .container{
+    .container {
         grid-gap: 9rem;
     }
 }
+
 @media screen and (max-width: 1024px) {
-    form{
+    form {
         width: 290px;
     }
-    form h2{
+    form h2 {
         font-size: 2.4rem;
         margin: 8px 0;
     }
-    .img img{
+    .img img {
         width: 360px;
     }
 }
+
 @media screen and (max-width: 768px) {
-    .wave{
-        display: none;
-    }
-    .img{
-        display: none;
-    }
-    .container{
+    .container {
         grid-template-columns: 1fr;
     }
-    .login-box{
+    .login-box {
         justify-content: center;
     }
 }
+
+.popup {
+    width: 400px;
+    height: 270px;
+    background: #ededed;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 0px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1;
+    border-radius: 8px;
+  }
+  
+  .open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+  }
+  
+  .popup button {
+    display: block;
+    width: 85%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    /* background-color:#38d39f;   */
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    background-size: 200%;
+    transition: .2s;
+    margin-left: 30px;
+  }
+
+  .popup .popupi {
+    border-radius:8px;
+    width: 100%;
+    background-color:red;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .popup .popupi {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .popup p {
+    font-size: 20px;
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  .exist {
+    width: 400px;
+    height: 270px;
+    background: #ededed;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 0px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1;
+    border-radius: 8px;
+  }
+  
+  .open-exist {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .exist h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+  }
+  
+  .exist button {
+    display: block;
+    width: 85%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    /* background-color:#38d39f;   */
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    background-size: 200%;
+    transition: .2s;
+    margin-left: 30px;
+  }
+
+  .exist .existi {
+    border-radius:8px;
+    width: 100%;
+    background-color:red;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .exist .existi {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .exist p {
+    font-size: 20px;
+  }

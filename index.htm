@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #1D2521;
+            color: #C7D1CC;
+        }
+
+        nav.dark-mode {
+            background-color: #27302C;
+        }
+
+        footer.dark-mode {
+            background-color: #27302C;
+            color: #C7D1CC;
+        }
+
+        footer.dark-mode a {
+            color: #C7D1CC;
+        }
+    </style>
+    <title>ProceduraQ</title>
+</head>
+
+<body>
+    <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Blog</a>
+            </li>
+            <li>
+                <a href="blogslist.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <input type="text" placeholder="Search Here">
+            </li>
+        </ul>
+    </div>
+
+    <nav class="light-mode">
+        <div id="logo-img">
+            <a href="/index.htm">
+                ProceduraQ
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="/firstaid.htm">First Aid</a>
+            </li>
+            <li>
+                <a href="/doctor/doctor.html">Leave request</a>
+            </li>
+            <li>
+                <a href="aboutUS.htm">About</a>
+            </li>
+            <li>
+                <div>
+                    <a id="dark-mode-toggle">Dark Mode</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+    <div id="banner">
+        <h1>ProceduraQ</h1>
+        <h3>just trust and help fast</h3>
+    </div>
+
+    <main>
+        <a href="blogslist.html">
+            <h2 class="section-heading">Read more</h2>
+        </a>
+
+        <section>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/med-sestra.jpeg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>Use the "Doctor at home" service.</h3>
+                    </a>
+                    <p>
+                        Can't visit the treatment room? Use the "Doctor at Home" service. You can order the medician service to your home or leave a request
+                    </p>
+                    <a href="/clinicList/polikList.html" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <a href="blogpost.html">
+                        <img src="img/reg-vrach.jpeg" alt="Card Image">
+                    </a>
+                </div>
+
+                <div class="card-description">
+                    <a href="blogpost.html">
+                        <h3>Learn more about us</h3>
+                    </a>
+                    <p>
+                       There you can read a lot of things about the history of company, it goals, funny moments from process of work, purpose and more
+                    </p>
+                    <a href="aboutUS.htm" class="btn-readmore">Read more</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="light-mode">
+        <div id="left-footer">
+            <h3>Quick Links</h3>
+            <p>
+                <ul>
+                    <li>
+                        <a href="index.htm">Home</a>
+                    </li>
+                    <li>
+                        <a href="aboutUS.htm">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="firstaid.htm">First Aid</a>
+                    </li>
+                    <li>
+                        <a href="blog.htm">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="darkmode.js">
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
